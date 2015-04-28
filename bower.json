@@ -14,5 +14,8 @@
     "resize",
     "equal"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "ignore": [
+    "**/.*"
+  ]
 }
