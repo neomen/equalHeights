@@ -1,14 +1,17 @@
 (function ($) {
   $.fn.equalHeights = function () {
-    var $blocks = $(this), maxH = $blocks.eq(0).height();
-    function equal() {
-      $blocks.each(function () {
+    var $items = $(this);
+    function equalize() {
+      $items.height('initial');
+      var maxH = $items.eq(0).height();
+      $items.each(function () {
         maxH = ($(this).height() > maxH) ? $(this).height() : maxH;
       });
-      $blocks.height(maxH);
+      $items.height(maxH);
     }
+    equalize();
     $(window).bind('resize', function () {
-      equal($blocks);
+      equalize();
     });
   };
 })(jQuery);
